@@ -1,0 +1,250 @@
+.botdesk-desk-rail {
+  position: relative;
+  z-index: 40;
+  display: flex;
+  flex: 0 0 64px;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 42px 5px 12px;
+  background: var(--color-background-base);
+  border-right: 1px solid var(--color-stroke);
+}
+.botdesk-mark {
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 650;
+  letter-spacing: -0.04em;
+}
+.botdesk-mark span {
+  color: #d3ac70;
+}
+.botdesk-desk-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.botdesk-desk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  min-height: 52px;
+  width: 100%;
+  padding: 4px 1px;
+  border-radius: 8px;
+  color: var(--color-content);
+}
+.botdesk-desk > span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--color-stroke);
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.botdesk-desk small {
+  max-width: 54px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 9px;
+}
+.botdesk-desk[aria-pressed="true"] > span {
+  background: color-mix(in srgb, #d3ac70 18%, transparent);
+  border-color: #d3ac70;
+}
+.botdesk-desk:hover,
+.botdesk-agent:hover,
+.botdesk-add-agent:hover {
+  background: color-mix(in srgb, currentColor 7%, transparent);
+}
+.botdesk-new-desk {
+  justify-content: center;
+  border: 1px dashed var(--color-stroke);
+}
+.botdesk-add-project {
+  margin-top: auto;
+  justify-content: center;
+  min-height: 36px;
+}
+.botdesk-desk-form,
+.botdesk-desk-error {
+  position: absolute;
+  top: 100px;
+  left: 72px;
+  width: min(320px, calc(100vw - 92px));
+  padding: 18px;
+  border: 1px solid var(--color-stroke);
+  border-radius: 12px;
+  background: var(--color-background-base);
+}
+.botdesk-desk-form label {
+  display: block;
+  margin: 18px 0 6px;
+  font-size: 12px;
+}
+.botdesk-desk-form input {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--color-stroke);
+  border-radius: 6px;
+  background: transparent;
+}
+.botdesk-desk-form p,
+.botdesk-agent-picker p {
+  margin: 10px 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--color-content) 76%, transparent);
+}
+.botdesk-primary {
+  width: 100%;
+  padding: 9px 12px;
+  margin-top: 6px;
+  border-radius: 6px;
+  background: #d3ac70;
+  color: #211b13;
+  font-size: 12px;
+  font-weight: 600;
+}
+.botdesk-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 13px 14px;
+}
+.botdesk-brand strong {
+  font-size: 20px;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+.botdesk-brand span {
+  font-size: 10px;
+  color: color-mix(in srgb, var(--color-content) 65%, transparent);
+}
+.botdesk-chat-agents {
+  position: relative;
+  z-index: 20;
+  flex-shrink: 0;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-stroke);
+}
+.botdesk-agent-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.botdesk-you {
+  font-size: 11px;
+  padding: 7px 8px;
+}
+.botdesk-agent-divider {
+  height: 18px;
+  width: 1px;
+  background: var(--color-stroke);
+  margin-right: 3px;
+}
+.botdesk-agent,
+.botdesk-add-agent {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 6px 9px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 11px;
+}
+.botdesk-agent[aria-pressed="true"] {
+  border-color: color-mix(in srgb, #d3ac70 50%, transparent);
+  background: color-mix(in srgb, #d3ac70 9%, transparent);
+}
+.botdesk-agent-state {
+  font-size: 10px;
+  color: color-mix(in srgb, var(--color-content) 70%, transparent);
+}
+.botdesk-add-agent {
+  border-style: dashed;
+  border-color: var(--color-stroke);
+}
+.botdesk-agent:disabled,
+.botdesk-add-agent:disabled,
+.botdesk-agent-options button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.botdesk-agent-picker {
+  position: absolute;
+  top: 100%;
+  left: 16px;
+  z-index: 50;
+  padding: 18px;
+  width: min(430px, calc(100% - 32px));
+  max-height: min(520px, 65vh);
+  overflow-y: auto;
+  background: var(--color-background-base);
+  border: 1px solid var(--color-stroke);
+  border-radius: 10px;
+}
+.botdesk-picker-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+.botdesk-picker-heading button {
+  padding: 4px;
+}
+.botdesk-agent-options {
+  display: grid;
+  gap: 3px;
+}
+.botdesk-agent-options button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 7px;
+  text-align: left;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.botdesk-agent-options button:hover:enabled {
+  background: color-mix(in srgb, currentColor 7%, transparent);
+}
+.botdesk-agent-options small {
+  margin-left: auto;
+  font-size: 10px;
+}
+.botdesk-handoff-notice {
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.botdesk-desk-rail button:focus-visible,
+.botdesk-chat-agents button:focus-visible,
+.botdesk-desk-form input:focus-visible {
+  outline: 2px solid #d3ac70;
+  outline-offset: 3px;
+}
+@media (max-width: 1000px) {
+  .botdesk-desk-rail {
+    flex-basis: 52px;
+  }
+  .botdesk-desk small {
+    max-width: 42px;
+  }
+  .botdesk-agent-state {
+    display: none;
+  }
+  .botdesk-chat-agents {
+    padding: 8px;
+  }
+}
